@@ -56,7 +56,7 @@ function getUsername(ck) {
 
 async function getScriptUrl() {
   const response = await $.http.get({
-    url: 'https://raw.githubusercontent.com/dompling/Script/master/jd/ql_api.js',
+    url: 'https://gitspeedup.charles-yi.workers.dev/yogoweili/private/raw/main/ql_api.js',
   })
   return response.body
 }
