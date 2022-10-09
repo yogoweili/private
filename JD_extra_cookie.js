@@ -56,7 +56,7 @@ function getUsername(ck) {
 
 async function getScriptUrl() {
   const response = await $.http.get({
-    url: 'https://gitspeedup.charles-yi.workers.dev/yogoweili/private/raw/main/ql_api.js',
+    url: 'https://raw.githubusercontent.com/dompling/Script/master/jd/ql_api.js',
   })
   return response.body
 }
@@ -174,10 +174,9 @@ async function GetCookie() {
       })
       if ($.ql) await $.ql.asyncCookie(CookieValue, 'JD_COOKIE')
       if (updateIndex !== null) {
-        const response = await TotalBean(updateCookiesData[updateIndex].cookie)
-        if (response && response.retcode === '0')
-          return console.log('cookie 未过期，无需更新')
-
+        // const response = await TotalBean(updateCookiesData[updateIndex].cookie)
+        // if (response && response.retcode === '0')
+        //   return console.log('cookie 未过期，无需更新')
         updateCookiesData[updateIndex].cookie = CookieValue
         CookieName = '【账号' + (updateIndex + 1) + '】'
         tipPrefix = '更新京东'
@@ -207,7 +206,7 @@ async function GetCookie() {
     } else {
       console.log('ck 写入失败，未找到相关 ck')
     }
-  } else if ($request.headers && $request.url.indexOf('getSessionLog') > -1) {
+  } else if ($request.headers) {
     if (CV.match(/wskey=.+?;/) && CV.match(/pin=.+?;/)) {
       const code = CV.match(/wskey=.+?;/)[0] + `pt_${CV.match(/pin=.+?;/)[0]}`
       const wskey = CV.match(/wskey=.+?;/)[0]
