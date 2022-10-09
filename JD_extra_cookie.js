@@ -206,8 +206,7 @@ async function GetCookie() {
     } else {
       console.log('ck 写入失败，未找到相关 ck')
     }
-  } else if ($request.headers) {
-    console.log(CV)
+  } else if ($request.headers && $request.url.indexOf('getSessionLog') > -1) {
     if (CV.match(/wskey=.+?;/) && CV.match(/pin=.+?;/)) {
       const code = CV.match(/wskey=.+?;/)[0] + `pt_${CV.match(/pin=.+?;/)[0]}`
       const wskey = CV.match(/wskey=.+?;/)[0]
