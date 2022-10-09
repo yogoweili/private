@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@yogoweili 
-yogoweili
-/
-private
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-private/JD_extra_cookie.js /
-@yogoweili
-yogoweili Update JD_extra_cookie.js
-Latest commit bf34985 4 minutes ago
- History
- 1 contributor
-590 lines (539 sloc)  16.6 KB
-
 /*
 Author: 2Ya
 Github: https://github.com/domping
@@ -609,17 +580,3 @@ function API(name = 'untitled', debug = false) {
     }
   })(name, debug)
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
