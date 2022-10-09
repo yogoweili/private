@@ -242,7 +242,6 @@ async function GetCookie() {
       })
     }
   } else {
-    console.log($request.headers)
     console.log('未匹配到相关信息，退出抓包')
   }
 }
