@@ -1,7 +1,9 @@
 /*
+
 Author: 2Ya
 Github: https://github.com/domping
 Version: v1.1.0
+
 ===================
 特别说明：
 1.获取多个京东cookie文件，不和野比大佬的文件冲突。暂不支持野比大佬脚本签到。
@@ -11,23 +13,29 @@ Version: v1.1.0
 使用方式：复制 https://home.m.jd.com/myJd/newhome.action 到浏览器打开 ，在个人中心自动获取 cookie，
 若弹出成功则正常使用。否则继续再此页面继续刷新一下试试
 ===================
+
 ===================
 [MITM]
 hostname = me-api.jd.com
+
 【Surge脚本配置】:
 ===================
 [Script]
 获取京东Cookie = type=http-request,pattern=^https:\/\/me-api\.jd\.com\/user_new\/info\/GetJDUserInfoUnion,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/dompling/Script/master/jd/JD_extra_cookie.js,script-update-interval=0
+
 ===================
 【Loon脚本配置】:
 ===================
 [Script]
 http-request ^https:\/\/me-api\.jd\.com\/user_new\/info\/GetJDUserInfoUnion tag=获取京东Cookie, script-path=https://raw.githubusercontent.com/dompling/Script/master/jd/JD_extra_cookie.js
+
 ===================
 【 QX  脚本配置 】 :
 ===================
+
 [rewrite_local]
 ^https:\/\/me-api\.jd\.com\/user_new\/info\/GetJDUserInfoUnion  url script-request-header https://raw.githubusercontent.com/dompling/Script/master/jd/JD_extra_cookie.js
+
  */
 const APIKey = 'CookiesJD'
 const $ = new API('ql', false)
@@ -199,7 +207,7 @@ async function GetCookie() {
       console.log('ck 写入失败，未找到相关 ck')
     }
   } else if ($request.headers) {
-    console.log('未匹配到相关信息，退出抓包')
+    console.log(CV)
     if (CV.match(/wskey=.+?;/) && CV.match(/pin=.+?;/)) {
       const code = CV.match(/wskey=.+?;/)[0] + `pt_${CV.match(/pin=.+?;/)[0]}`
       const wskey = CV.match(/wskey=.+?;/)[0]
